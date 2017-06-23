@@ -1,0 +1,35 @@
+<!--
+  Generated template for the InventoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+require(hurst.service.ts);
+
+<ion-header>
+  <ion-navbar color = "black">
+    <ion-title>Inventory</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding="true">
+
+    <ion-item>
+      <ion-label align="center">Category</ion-label>
+    </ion-item>
+
+  <ion-list>
+    <ion-item button menuClose *ngFor="let item of items" (click)="pushNav(item.category)">
+      <span style="text: left">{{item.category | fixText }}</span>
+      <ion-badge color="hurst" item-end>
+        <span style="float:right" >{{item.count}}</span>
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

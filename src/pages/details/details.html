@@ -1,0 +1,101 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "black">
+    <ion-title no-border="true">Inventory</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label align="center">Listing</ion-label>
+  </ion-item>
+
+    <ion-card>
+      <ion-card-content no-padding="true">
+
+        <ion-item *ngIf="(items?.noimg); else elseBlock">
+          <img src="{{items?.pics}}">
+          {{items?.featured}}
+
+        </ion-item>
+
+        <ng-template #elseBlock>
+
+          <ion-slides pager zoom>
+            <ion-slide *ngFor="let i of items?.pics">
+              <img src="{{link()}}{{i}}" imageViewer >
+            </ion-slide>
+          </ion-slides>
+
+
+        </ng-template>
+        <ion-list>
+          <ion-item color="hurst">
+            {{items?.model}}
+          </ion-item>
+        </ion-list>
+
+      </ion-card-content>
+    </ion-card>
+
+
+  <ion-list>
+    <ion-item>
+      Year:
+      <span style="float:right">
+        {{items?.ID}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Hours:
+      <span style="float:right">
+        {{items?.hours}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Drive:
+      <span style="float:right">
+        {{items?.drive}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Transmission:
+      <span style="float:right">
+        {{items?.trans}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Stock No:
+      <span style="float:right">
+        {{items?.stock_no}}
+      </span>
+    </ion-item>
+  <ion-item>
+    <p text-wrap>
+      {{items?.description}}
+    </p>
+  </ion-item>
+  <ion-item color="black">
+    <h6 text-center="">
+        ${{items?.price}}
+    </h6>
+  </ion-item>
+  </ion-list>
+  <button ion-button color="hurst" (click)="pushNav(item?.ID)" block>
+    Find Out More Info&nbsp;&nbsp;
+    <ion-icon name="mail"></ion-icon>
+  </button><br>
+
+
+</ion-content>

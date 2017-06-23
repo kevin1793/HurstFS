@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color = "black">
+    <ion-title>Service Request</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form (submit)="sendService()">
+
+    <h6>Location</h6>
+    <ion-list>
+      <ion-item>
+        <ion-label>Choose Location</ion-label>
+        <ion-select [(ngModel)]="location" name="location">
+          <ion-option value="ABERNATHY">ABERNATHY</ion-option>
+          <ion-option value="COLORADO CITY">COLORADO CITY</ion-option>
+          <ion-option value="CROSBYTON">CROSBYTON</ion-option>
+          <ion-option value="LORENZO">LORENZO</ion-option>
+          <ion-option value="LUBBOCK">LUBBOCK</ion-option>
+          <ion-option value="SLATON">SLATON</ion-option>
+          <ion-option value="SYNDER">SYNDER</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <h6>Details</h6>
+    <ion-item>
+      <ion-textarea type="text" [(ngModel)]="description" name="description" placeholder="Please enter a description for service.">
+      </ion-textarea>
+    </ion-item>
+
+    <h6>Serial</h6>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="serial" name="serial" placeholder="Serial Number"></ion-input>
+    </ion-item>
+
+    <h6>Email</h6>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="email" name="email" placeholder="Serial Number"></ion-input>
+    </ion-item>
+
+    <p><br><br></p>
+
+    <button ion-button color="hurst" type="submit"  block>Request Service</button>
+  </form>
+
+</ion-content>

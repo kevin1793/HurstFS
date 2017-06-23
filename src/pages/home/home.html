@@ -1,0 +1,85 @@
+<ion-header >
+  <ion-navbar color = "black">
+    <ion-title text-wrap="true"> Hurst FS</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label align="center">Latest Inventory</ion-label>
+  </ion-item>
+
+    <ion-card>
+      <ion-card-content no-padding="true">
+        <ion-slides pager>
+          <ion-slide *ngFor="let item of items">
+            <img src="{{item.image}}" imageViewer="">
+
+            <ion-list>
+              <h6>
+                <ion-item color="hurst">
+                  <span>
+              {{item.model}}
+              </span>
+                </ion-item>
+                <ion-item>
+                  Price:
+                  <span style="float:right">
+              ${{item.price}}
+              </span>
+                </ion-item>
+                <ion-item>
+                  Year:
+                  <span style="float:right">
+              {{item.year}}
+              </span>
+                </ion-item>
+                <ion-item>
+                  Hours:
+                  <span style="float:right">
+              {{item.hours}}
+              </span>
+                </ion-item>
+              </h6>
+
+            </ion-list>
+            <button ion-button color="hurst"  (click)="pushNav(item.type,item.ID)">
+              View Item
+            </button>
+            <br><br><br>
+          </ion-slide>
+        </ion-slides>
+      </ion-card-content>
+    </ion-card>
+
+
+  <ion-item padding="0">
+    <ion-label align="center"><br>Latest News</ion-label>
+  </ion-item>
+
+      <ion-list *ngFor="let entry of entries; let i = index">
+        <ion-item *ngIf="i<1" text-wrap>
+          <h5>
+            <br>{{entry.getElementsByTagName('pubDate')[0].textContent}}
+          </h5>
+          <img src="{{entry.getElementsByTagName('description')[0].textContent | getPic }}" imageViewer>
+          <h2>
+            {{entry.getElementsByTagName('title')[0].textContent}}
+          </h2>
+          <h5>
+            {{entry.getElementsByTagName('category')[0].textContent}}<br><br>
+          </h5>
+          <a ion-button  color="hurst" block target = "_blank" href="{{entry.getElementsByTagName('link')[0].textContent}}">
+            Read
+          </a>
+        </ion-item>
+
+      </ion-list>
+
+</ion-content>
+
