@@ -1,0 +1,55 @@
+<!--
+  Generated template for the IdsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "black">
+    <ion-title>Inventory</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding="true">
+
+  <ion-item>
+    <ion-label align="center">{{model | spaceIt}}</ion-label>
+  </ion-item>
+
+  <ion-list>
+    <ion-item  *ngFor="let item of items" button menuClose (click)="pushNav(item.table, item.ID)">
+
+      <ion-thumbnail *ngIf = "item.noimg; else elseBlock" item-start>
+        <img src="{{item.featured}}">
+      </ion-thumbnail>
+
+      <ng-template #elseBlock>
+        <ion-thumbnail>
+          <ion-spinner name="circles" *ngIf="loading" alt="loading"></ion-spinner>
+          <img [hidden]="loading" (load)="onLoad()" src="{{item.pics[0]}}">
+        </ion-thumbnail>
+
+      </ng-template>
+
+      <h6 text-center="true">
+        <span><br>${{item.price}} </span>&emsp;
+        <span>
+          <ion-icon name="time">
+          </ion-icon>
+          {{item.hours}}
+        </span>
+        <ion-badge color="hurst" style="float:right">
+          <ion-icon  name="arrow-forward"></ion-icon>
+        </ion-badge>
+      </h6>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

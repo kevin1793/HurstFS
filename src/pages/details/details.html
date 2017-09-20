@@ -1,0 +1,98 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "black">
+    <ion-title no-border="true">Inventory</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <button ion-button class="more-btn" (click)="pushNav(item?.ID)" block>
+     <ion-icon ios="ios-mail-outline" md="md-mail"></ion-icon> &nbsp;Find Out More Info
+  </button>
+
+    <ion-card>
+      <ion-card-content no-padding="true">
+
+        <ion-item *ngIf="(items?.noimg); else elseBlock">
+          <img src="{{items?.pics}}">
+          {{items?.featured}}
+
+        </ion-item>
+
+        <ng-template #elseBlock>
+
+          <ion-slides pager zoom>
+            <ion-slide *ngFor="let i of items?.pics">
+              <img src="{{link()}}{{i}}" onError="this.src='assets/img/noImg.png';" imageViewer>
+            </ion-slide>
+          </ion-slides>
+
+
+        </ng-template>
+        <ion-list>
+          <ion-item color="hurst">
+            {{items?.model}}
+          </ion-item>
+        </ion-list>
+
+      </ion-card-content>
+    </ion-card>
+
+
+  <ion-list>
+    <ion-item>
+      Year:
+      <span style="float:right">
+        {{items?.ID}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Hours:
+      <span style="float:right">
+        {{items?.hours}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Drive:
+      <span style="float:right">
+        {{items?.drive}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Transmission:
+      <span style="float:right">
+        {{items?.trans}}
+      </span>
+    </ion-item>
+    <ion-item>
+      Stock No:
+      <span style="float:right">
+        {{items?.stock_no}}
+      </span>
+    </ion-item>
+  <ion-item>
+    <p text-wrap>
+      {{items?.description}}
+    </p>
+  </ion-item>
+  <ion-item color="black"  class="item-price">
+    <h6 class="inventory-details-price">
+        ${{items?.price}}
+    </h6>
+  </ion-item>
+  </ion-list>
+
+
+
+</ion-content>

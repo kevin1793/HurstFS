@@ -1,0 +1,39 @@
+<!--
+  Generated template for the NewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color = "black">
+    <ion-title>News</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding="true">
+
+  <ion-list>
+    <ion-item *ngFor="let entry of entries" text-wrap class="news-page-item">
+
+        <img src="{{entry.getElementsByTagName('description')[0].textContent | getPic }}" imageViewer>
+
+
+        <h5 class="article-date">
+          <br><ion-icon ios="ios-calendar-outline" md="md-calendar"></ion-icon> {{entry.getElementsByTagName('pubDate')[0].textContent}}
+        </h5>
+        <h2 class="article-text">
+          {{entry.getElementsByTagName('title')[0].textContent}}
+        </h2>
+
+      <a ion-button block target = "_blank" color="hurst" href="{{entry.getElementsByTagName('link')[0].textContent}}">
+        Read More
+      </a>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

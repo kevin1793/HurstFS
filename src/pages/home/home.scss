@@ -1,0 +1,66 @@
+page-home {
+
+  .card
+  {
+    padding: 0 !important;
+  }
+  .item
+  {
+    height: auto !important;
+
+  }
+
+  .card-ios {
+
+    margin:0px;
+
+    width:100%;
+
+  }
+
+  .swiper-slide {
+
+    width:100% !important;
+
+  }
+
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+      left: 0;
+      bottom: 300px;
+      width: 100%;
+  }
+
+  .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #fff !important;
+
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    background:#eee;
+  }
+
+  .home-news-items .item-ios {
+
+    padding-left:0px;
+
+  }
+
+  .home-news-items .label-ios {
+
+    margin-right:0px;
+
+  }
+
+  .home-news-items .item-button {
+
+      height: 50px;
+      border-radius: 0px;
+      margin-top: 2rem;
+
+  }
+
+
+}

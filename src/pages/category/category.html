@@ -1,0 +1,34 @@
+<!--
+  Generated template for the CategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "black">
+    <ion-title>Inventory</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding="true">
+
+  <ion-item>
+    <ion-label align="center">{{category | fixText}}</ion-label>
+  </ion-item>
+
+  <ion-list  class="inventory-list">
+    <ion-item button menuClose *ngFor="let item of items" (click)="pushNav(item.model, category)">
+      <span style="text: left">{{item.model}}</span>
+      <ion-badge color="hurst" item-end>
+        <span style="float:right" >{{item.count}}</span>
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,198 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.item-button {
+
+    font-size: 1.5rem !important;
+
+    padding: 2rem !important;
+
+}
+
+.article-date {
+
+    margin-bottom:1rem;
+
+    padding-bottom:.5rem;
+
+    border-bottom:1px solid #e2e2e2;
+
+    background: #f2f2f2;
+    margin-top: -4px;
+    margin-bottom: 1rem;
+
+}
+
+.article-text {
+
+    padding-top:1rem;
+
+}
+
+.no-border .item {
+
+    border:0px !important;
+
+}
+
+.home-header {
+
+    background: #f2f2f2;
+
+    padding: 1rem;
+
+    font-size: 3rem;
+
+    margin:0px !important;
+
+}
+
+
+.item-inner {
+
+    padding-right:0px !important;
+
+    border:0px !important;
+
+}
+
+
+.inventory-list .item-inner {
+
+    border-bottom:1px solid #c2c2c2 !important;
+
+    padding-right:8px !important;
+
+    padding: 1rem;
+
+    margin-left: -16px;
+
+}
+
+.inventory-details-price {
+
+    font-size:2.5rem !important;
+
+    text-align: center;
+
+
+}
+
+
+.badge-ios {
+
+    border-radius: 0px;
+
+    color: #fff;
+
+    font-size: 18px;
+
+    padding: 1rem;
+
+}
+
+
+.inventory-price {
+
+    line-height: 4rem;
+
+    font-size: 2.5rem;
+
+    display: inline-block;
+
+    width: 40%;
+}
+
+
+.inventory-hours {
+
+    line-height: 3rem;
+
+    font-size: 1.5rem;
+
+    color: #666;
+
+}
+
+.news-page-item {
+
+    padding-bottom: 2.5rem;
+
+    border-bottom: 1px solid #e2e2e2;
+
+}
+
+
+.inventory-hours .icon {
+
+    font-size:1.5rem;
+
+}
+
+
+.more-btn {
+
+    background: #ffde03;
+
+    padding: 12px;
+
+    color: #00532b;
+
+    width: 100%;
+
+    border-radius: 0px;
+
+}
+
+.news-page-item {
+
+    padding-left:0px;
+
+    width: 103%;
+
+}
+
+.news-page-item .item-button {
+
+    height: 50px;
+    border-radius: 0px;
+    margin-top: 2rem;
+
+}
+
+
+.news-page-item .label-ios {
+
+    margin-top:0px;
+    
+}
+
+.article-date, .article-text {
+
+    padding-left:1.5rem;
+
+    padding-right:1.5rem;
+
+}
+
+
+.article-text {
+
+    font-size:2.5rem !important;
+
+}
